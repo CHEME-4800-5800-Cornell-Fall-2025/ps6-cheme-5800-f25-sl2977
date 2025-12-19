@@ -38,3 +38,5 @@ function build(modeltype::Type{MyQLearningAgentModel}, data::NamedTuple)::MyQLea
 
     return model
 end
+
+# (missing a field) --> add a type, must update the factory method, both A and S go into the digits, look at L13b solution
