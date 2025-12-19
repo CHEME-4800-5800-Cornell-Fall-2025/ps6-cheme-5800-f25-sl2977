@@ -6,6 +6,7 @@ function build(modeltype::Type{MyExperimentalDrugCocktailContext}, data::NamedTu
     # create new context instance -
     context = modeltype()
 
+
     # populate context fields from data -
     context.K = data.K
     context.m = data.m
@@ -14,9 +15,9 @@ function build(modeltype::Type{MyExperimentalDrugCocktailContext}, data::NamedTu
     context.cost = data.cost
     context.levels = data.levels
     context.W = data.W
+    context.S = data.S  # set safety constraint
+    context.bounds = data.bounds  # set concentration bounds matrix
 
-    # TODO: set the safety and bounds fields here
-    throw(ErrorException("You need to set the safety and bounds fields here"));
 
     return context
 end
